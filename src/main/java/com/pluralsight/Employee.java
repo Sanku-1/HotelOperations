@@ -22,6 +22,22 @@ public class Employee {
         return employeeId;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public double getPayRate() {
+        return payRate;
+    }
+
+    public double getHoursWorked() {
+        return hoursWorked;
+    }
+
     public double getOvertimeHours() {
         if (this.hoursWorked > 40) {
             this.overtimeHours = this.hoursWorked - 40;
