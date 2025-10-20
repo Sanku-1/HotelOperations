@@ -1,0 +1,45 @@
+package com.pluralsight;
+
+public class Employee {
+    String employeeId;
+    String name;
+    String department;
+    double payRate;
+    double hoursWorked;
+    double totalPay;
+    double regularHours;
+    double overtimeHours;
+
+    Employee(String employeeId, String name, String department, double payRate, double hoursWorked) {
+        this.employeeId = employeeId;
+        this.name = name;
+        this.department = department;
+        this.payRate = payRate;
+        this.hoursWorked = hoursWorked;
+    }
+
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public double getOvertimeHours() {
+        if (this.hoursWorked > 40) {
+            this.overtimeHours = this.hoursWorked - 40;
+        } else {
+            this.overtimeHours = 0;
+        }
+        return this.overtimeHours;
+    }
+
+    public double getTotalPay() {
+        totalPay = this.getRegularHours() * this.payRate + this.getOvertimeHours() * this.payRate * 1.5;
+        return this.totalPay;
+    }
+
+    public double getRegularHours() {
+        if (this.hoursWorked > 40) {
+            this.regularHours = 40;
+        }
+        return this.regularHours;
+    }
+}
