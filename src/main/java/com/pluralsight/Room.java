@@ -37,8 +37,10 @@ public class Room {
     }
 
     public void checkIn() {
-        this.isOccupied = true;
-        this.isDirty = true;
+        if (!isOccupied && !isDirty) {
+            this.isOccupied = true;
+            this.isDirty = true;
+        }
     }
 
     public void checkOut() {
@@ -46,7 +48,9 @@ public class Room {
     }
 
     public void cleanRoom() {
-        this.isDirty = false;
+        if (!isOccupied) {
+            this.isDirty = false;
+        }
     }
 }
 
