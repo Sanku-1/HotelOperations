@@ -83,7 +83,7 @@ public class Employee {
         if (this.punchInLocalDateTime == null) {
             this.punchInLocalDateTime = LocalDateTime.now();
         } else {
-            this.punchInLocalDateTime = LocalDateTime.now();
+            this.punchOutLocalDateTime = LocalDateTime.now();
             double punchInHours = punchInLocalDateTime.getHour();
             double punchInMinutes = punchInLocalDateTime.getMinute();
             double punchOutHours = punchOutLocalDateTime.getHour();
