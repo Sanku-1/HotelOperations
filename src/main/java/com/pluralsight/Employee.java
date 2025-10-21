@@ -69,6 +69,8 @@ public class Employee {
             this.punchOutTime = time;
             hoursWorkedThisShift = this.punchOutTime - this.punchInTime;
             this.hoursWorked += hoursWorkedThisShift;
+            this.punchInTime = 0;
+            this.punchOutTime = 0;
         }
     }
 }
