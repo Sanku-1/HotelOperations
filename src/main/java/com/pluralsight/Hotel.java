@@ -11,6 +11,8 @@ public class Hotel {
         this.name = name;
         this.numberOfSuites = numberOfSuites;
         this.numberOfRooms = numberOfRooms;
+        this.bookedSuites = 0;
+        this.bookedBasicRooms = 0;
     }
 
     public Hotel(String name, int numberOfSuites, int numberOfRooms, int bookedSuites, int bookedBasicRooms) {
