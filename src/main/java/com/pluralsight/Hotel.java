@@ -24,14 +24,14 @@ public class Hotel {
     public boolean bookRoom(int numberOfRooms, boolean isSuite) {
         boolean booked = false;
         if (isSuite) {
-            if (numberOfRooms <= (this.numberOfSuites - this.bookedSuites)) {
+            if (numberOfRooms <= this.getAvailableSuites()) {
                 this.bookedSuites += numberOfRooms;
                 booked = true;
             } else {
                 System.out.println("Unfortunately there aren't enough available rooms for your request");
             }
         } else {
-            if (numberOfRooms <= (this.numberOfRooms - this.bookedBasicRooms)) {
+            if (numberOfRooms <= this.getAvailableRooms()) {
                 this.bookedBasicRooms += numberOfRooms;
                 booked = true;
             } else {
@@ -39,5 +39,13 @@ public class Hotel {
             }
         }
         return booked;
+    }
+
+    public int getAvailableSuites() {
+        return (this.numberOfSuites - this.bookedSuites);
+    }
+
+    public int getAvailableRooms() {
+        return (this.numberOfRooms - this.bookedBasicRooms);
     }
 }
