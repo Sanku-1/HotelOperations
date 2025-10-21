@@ -9,6 +9,8 @@ public class Employee {
     double totalPay;
     double regularHours;
     double overtimeHours;
+    double punchInTime;
+    double punchOutTime;
 
     Employee(String employeeId, String name, String department, double payRate, double hoursWorked) {
         this.employeeId = employeeId;
@@ -57,5 +59,16 @@ public class Employee {
             this.regularHours = 40;
         }
         return this.regularHours;
+    }
+
+    public void punchTimeClock(double time) {
+        double hoursWorkedThisShift = 0;
+        if (this.punchInTime == 0) {
+            this.punchInTime = time;
+        } else {
+            this.punchOutTime = time;
+            hoursWorkedThisShift = this.punchOutTime - this.punchInTime;
+            this.hoursWorked += hoursWorkedThisShift;
+        }
     }
 }
