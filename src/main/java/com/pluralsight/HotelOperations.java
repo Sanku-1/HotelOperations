@@ -13,17 +13,22 @@ public class HotelOperations {
         System.out.println(newRoom.isAvailable());
 
         Employee testEmp = new Employee("1234", "John", "Housekeeping", 25, 0);
-        testEmp.punchTimeClock(12.30);
-        System.out.println(testEmp.getHoursWorked());
-        testEmp.punchTimeClock(14.30);
-        System.out.println(testEmp.getHoursWorked());
-        testEmp.punchTimeClock(12.30);
-        System.out.println(testEmp.getHoursWorked());
-        testEmp.punchTimeClock(14.30);
+//        testEmp.punchTimeClock(12.30);
+//        System.out.println(testEmp.getHoursWorked());
+//        testEmp.punchTimeClock(14.30);
+//        System.out.println(testEmp.getHoursWorked());
+//        testEmp.punchTimeClock(12.30);
+//        System.out.println(testEmp.getHoursWorked());
+//        testEmp.punchTimeClock(14.30);
         System.out.println(testEmp.getHoursWorked());
         testEmp.punchTimeClock(10.30);
         System.out.println(testEmp.getHoursWorked());
         testEmp.punchTimeClock(14.30);
         System.out.println(testEmp.getHoursWorked());
+        testEmp.punchTimeClock();
+        System.out.println(testEmp.getHoursWorked());
+        testEmp.punchTimeClock();
+        System.out.println(testEmp.getHoursWorked());
+
     }
 }
