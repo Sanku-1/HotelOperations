@@ -60,4 +60,41 @@ class RoomTest {
         assertEquals(expectedOccupiedState, testOccupied);
     }
 
+    @Test
+    public void  checkIn_UnoccupiedDirtyRoom_DoesNotCheckIn() {
+        //Arrange
+        Room testRoom3 = new Room(3, 50);
+        boolean expectedCleanlinessState = true;
+        boolean expectedOccupiedState = false;
+
+        //Act
+        testRoom3.checkIn();
+        testRoom3.checkOut();
+        testRoom3.checkIn();
+
+
+        //Assert
+        boolean testOccupied = testRoom3.isOccupied;
+        boolean testDirty = testRoom3.isDirty;
+        assertEquals(expectedCleanlinessState, testDirty);
+        assertEquals(expectedOccupiedState, testOccupied);
+    }
+
+    @Test
+    public void  cleanRoom_OccupiedAndDirtyRoom_DoesNotCleanRoom() {
+        //Arrange
+        Room testRoom4 = new Room(3, 50);
+        boolean expectedCleanlinessState = true;
+        boolean expectedOccupiedState = true;
+
+        //Act
+        testRoom4.checkIn();
+        testRoom4.cleanRoom();
+
+        //Assert
+        boolean testOccupied = testRoom4.isOccupied;
+        boolean testDirty = testRoom4.isDirty;
+        assertEquals(expectedCleanlinessState, testDirty);
+        assertEquals(expectedOccupiedState, testOccupied);
+    }
 }
