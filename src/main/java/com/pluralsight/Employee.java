@@ -15,6 +15,7 @@ public class Employee {
     double punchOutTime;
     LocalDateTime punchInLocalDateTime;
     LocalDateTime punchOutLocalDateTime;
+    double startTime;
 
 
     Employee(String employeeId, String name, String department, double payRate, double hoursWorked) {
@@ -45,6 +46,10 @@ public class Employee {
         return hoursWorked;
     }
 
+    public double getStartTime() {
+        return startTime;
+    }
+
     public double getOvertimeHours() {
         if (this.hoursWorked > 40) {
             this.overtimeHours = this.hoursWorked - 40;
@@ -64,6 +69,16 @@ public class Employee {
             this.regularHours = 40;
         }
         return this.regularHours;
+    }
+
+    public void punchIn(double time) {
+        startTime = time;
+    }
+
+    public void punchOut(double time) {
+        double duration = time - startTime;
+        hoursWorked += duration;
+        startTime = 0;
     }
 
     public void punchTimeClock(double time) {
